@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
-const primaryToken = process.env.MAPBOX_API_TOKEN;
+const primaryToken = pk.eyJ1IjoiYXJkbzg4IiwiYSI6ImNrenY1eGk4bDFkcXMydm1vdHlheXg5anMifQ.RG_vO4Pl94-BDg-bz9tQmg;
 
 router.get('/', async (req, res) => {
     console.log('Resolve Adress from Mapbox API');
