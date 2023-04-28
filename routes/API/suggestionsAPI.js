@@ -1,7 +1,8 @@
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
-const primaryToken = 'pk.eyJ1IjoiYXJkbzg4IiwiYSI6ImNrenY1eGk4bDFkcXMydm1vdHlheXg5anMifQ.RG_vO4Pl94-BDg-bz9tQmg'; 
+const primaryToken =
+    'pk.eyJ1IjoiYXJkbzg4IiwiYSI6ImNrenY1eGk4bDFkcXMydm1vdHlheXg5anMifQ.RG_vO4Pl94-BDg-bz9tQmg';
 
 router.get('/', async (req, res) => {
     re = new RegExp(/\w+/);
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
             autocomplete: 'true',
             // routing: 'false',
             // worldview: lang,
-            access_token: primaryToken,
+            access_token: primaryToken
         };
         let paramsArray = [];
         Object.entries(params).forEach(([key, value]) => {
@@ -31,9 +32,9 @@ router.get('/', async (req, res) => {
             url: url,
             headers: {
                 'Accept': 'application/json',
-                'Accept-Encoding': 'gzip',
+                'Accept-Encoding': 'gzip'
             },
-            crossDomain: true,
+            crossDomain: true
             // timeout: 4000,
         })
             .then(response => {

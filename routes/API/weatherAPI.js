@@ -4,14 +4,13 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     re = new RegExp(/^-?\d+\.?\d+$/);
-    console.log('get weatherData from API'); 
+    console.log('get weatherData from API');
     // Acccept only requests with 'lat' & 'lon' params
     if (
         Object.keys(req.query).length &&
         re.test(req.query.lat) &&
         re.test(req.query.lon)
     ) {
-
         const primaryKey = '6M44EU7ZDRK49GFJHKBCX2JJC';
         const lang = req.query.lang;
         let paramsArray = [];
@@ -44,14 +43,14 @@ router.get('/', async (req, res) => {
                 'sunsetEpoch',
                 'uvindex',
                 // "severerisk",
-                'icon',
+                'icon'
             ],
             iconSet: 'icons2',
             includeAstronomy: true,
             include: ['days', 'hours', 'current'],
             // include: ["days", "hours", "current", "alerts", "events"],
             contentType: 'json',
-            lang: lang,
+            lang: lang
         };
         Object.entries(params).forEach(([key, value]) => {
             v = Array.isArray(value) ? value.join(',') : value;
@@ -69,9 +68,9 @@ router.get('/', async (req, res) => {
             url: url,
             headers: {
                 'Accept': 'application/json',
-                'Accept-Encoding': 'gzip',
+                'Accept-Encoding': 'gzip'
             },
-            crossDomain: true,
+            crossDomain: true
             // timeout: 4000,
         })
             .then(response => {
