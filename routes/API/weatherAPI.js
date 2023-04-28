@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     re = new RegExp(/^-?\d+\.?\d+$/);
-    console.log('get weatherData from API');
+    console.log('get weatherData from API'); 
     // Acccept only requests with 'lat' & 'lon' params
     if (
         Object.keys(req.query).length &&
